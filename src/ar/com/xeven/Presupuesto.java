@@ -3,15 +3,22 @@ package ar.com.xeven;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Presupuesto {
+public class Presupuesto extends Elemento {
 
     private List<Item> items;
 
-    public Presupuesto() {
+    public Presupuesto(String nombre, String descripcion) {
+        super(nombre, descripcion);
         items = new ArrayList<>();
     }
 
-    public Presupuesto(List<Item> items) {
+    public Presupuesto() {
+        super();
+        items = new ArrayList<>();
+    }
+
+    public Presupuesto(List<Item> items, String nombre, String descripcion) {
+        super(nombre, descripcion);
         this.items = items;
     }
 
@@ -40,6 +47,4 @@ public class Presupuesto {
     public void reemplazarItem(int indice, Item item) {
         items.set(indice, item);
     }
-
-
 }

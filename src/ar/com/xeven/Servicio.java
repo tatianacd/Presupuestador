@@ -13,6 +13,13 @@ public class Servicio extends Elemento implements Item{
         this.nombrePersona = nombrePersona;
     }
 
+    public Servicio() {
+        super();
+        costoHora = 0.0;
+        cantidadHoras = 0;
+        nombrePersona = "";
+    }
+
     public Double getCostoHora() {
         return costoHora;
     }
@@ -39,11 +46,17 @@ public class Servicio extends Elemento implements Item{
 
     @Override
     public Double calcularTotal() {
-        return null;
+      Double total = getCostoHora() * getCantidadHoras();
+      return total;
     }
 
     @Override
     public void mostrarDetalles() {
-
+        System.out.println("Servicio");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Descripcion: " + getDescripcion());
+        System.out.println("Cantidad de horas: " + getCantidadHoras());
+        System.out.println("Costo por hora: " + getCostoHora());
+        System.out.println("Nombre de persona autorizada: " + getNombrePersona());
     }
 }

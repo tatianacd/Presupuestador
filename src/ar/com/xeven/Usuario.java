@@ -8,12 +8,10 @@ public class Usuario {
     Scanner sc = new Scanner(System.in);
     private String nombre;
     private Presupuesto presupuesto;
-    List<Usuario> usuarios;
 
     public Usuario(String nombre) {
         this.nombre = nombre;
         presupuesto = new Presupuesto();
-        usuarios = new ArrayList<>();
     }
 
     public Usuario() {
@@ -37,7 +35,6 @@ public class Usuario {
                     System.out.println("Ingrese su nombre: ");
                     String nombreUsuario = sc.next();
                     Usuario usuario = new Usuario(nombreUsuario);
-                    hacerFila(usuario);
                     crearPresupuesto();
                     break;
                 case 2:
@@ -191,6 +188,14 @@ public class Usuario {
         }
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public void eliminar(){
         System.out.println("Elija que quiere eliminar: \n 1) Producto \n 2) Servicio");
         int elegir = sc.nextInt();
@@ -229,11 +234,5 @@ public class Usuario {
 
 
         }
-    }
-    public void hacerFila(Usuario usuario){
-      usuarios.add(usuario);
-      crearPresupuesto();
-      usuarios.get(0);
-      usuarios.remove(usuario);
     }
 }

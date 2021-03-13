@@ -20,6 +20,11 @@ public class Producto extends Elemento implements Item {
         this.precioUnitario = precioUnitario;
     }
 
+    public Producto() {
+        super();
+
+    }
+
     public int getCantidad() {
         return cantidad;
     }
@@ -38,11 +43,16 @@ public class Producto extends Elemento implements Item {
 
     @Override
     public Double calcularTotal() {
-        return null;
+       Double total = getPrecioUnitario() * getCantidad();
+       return total;
     }
 
     @Override
     public void mostrarDetalles() {
-
+        System.out.println("Producto");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Descripcion: " + getDescripcion());
+        System.out.println("Cantidad: " + getCantidad());
+        System.out.println("Precio unitario: " + getCantidad());
     }
 }
